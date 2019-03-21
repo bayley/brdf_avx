@@ -1,8 +1,7 @@
-#CXX=clang++-6.0
-CXX=g++
-CPPFLAGS=-O3 -I. -mavx 
-DEPS = 
-OBJ = main.o
+CXX=clang++-6.0
+CPPFLAGS=-O3 -I. -mavx
+DEPS = brdf.h geom.h
+OBJ = main.o brdf.o brdf_shader.o brdf_shader_avx.o
 LIBS = -lm
 
 %.o: %.c $(DEPS)
