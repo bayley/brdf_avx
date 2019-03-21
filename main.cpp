@@ -32,8 +32,10 @@ int main(int argc, char ** argv) {
 	m.base_color = {0.3f, 0.4f, 0.5f};
 	m.bake();
 
-	vec3f v;
+	vec3f1 v;
 	vec3f8 v8;
+	
+	printf("Size of vec3f1: %lu\n\n", sizeof(vec3f1));
 
 	//check that the results are equal
 	printf("Scalar results:\n");
@@ -77,5 +79,6 @@ int main(int argc, char ** argv) {
 	t_vector = (double)(end - start) / CLOCKS_PER_SEC;
 
 	printf("Scalar: %f s || Vector %f s\n", t_scalar, t_vector);
-	printf("Speedup: %f x\n", t_scalar / t_vector);
+	printf("Time per shader (vector): %f ns\n", t_vector * 1.e9 / (double)iters / 8.);
+	printf("Speedup: %fx\n", t_scalar / t_vector);
 }

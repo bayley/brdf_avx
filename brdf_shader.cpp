@@ -33,7 +33,7 @@ inline float lerp(float a, float b, float t) {
 }
 
 __attribute__((noinline))
-void PrincipledBRDF::sample(vec3f * result, float ci, float co, float c_th, float c_td) {
+void PrincipledBRDF::sample(vec3f1 * result, float ci, float co, float c_th, float c_td) {
 	float colored, white;
 
 	float F_co, F_ci, F_c_td;
